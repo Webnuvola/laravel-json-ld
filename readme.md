@@ -21,7 +21,6 @@ jsonld(string $context, array $data = [])
 
 ## Credits
 - [Fabio Cagliero](https://github.com/fab120)
-- [Webnuvola](https://github.com/webnuvola)
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
