@@ -1,0 +1,49 @@
+{
+    "name": "webnuvola/laravel-json-ld",
+    "description": "Laravel wrapper for torann/json-ld",
+    "keywords": ["laravel", "json-ld"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabio Cagliero",
+            "email": "caglierofabio@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "5.8.*|^6.0",
+        "torann/json-ld": "^0.0.18"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpunit/phpunit": "^8.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webnuvola\\Laravel\\JsonLd\\": "src/"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Webnuvola\\Laravel\\JsonLd\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Webnuvola\\Laravel\\JsonLd\\JsonLdServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit --testdox"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
