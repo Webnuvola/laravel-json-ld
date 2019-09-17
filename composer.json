@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "php": "^7.3",
         "illuminate/support": "5.8.*|^6.0",
         "torann/json-ld": "^0.0.18"
     },
