@@ -12,12 +12,12 @@
     ],
     "require": {
         "php": "^7.3",
-        "illuminate/support": "5.8.*|^6.0|^7.0",
+        "illuminate/support": "5.8.*|^6.0|^7.0|^8.0",
         "torann/json-ld": "~0.0.19"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
-        "phpunit/phpunit": "^8.5"
+        "phpunit/phpunit": "^9.4"
     },
     "autoload": {
         "psr-4": {
