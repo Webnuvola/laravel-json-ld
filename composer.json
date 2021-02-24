@@ -1,50 +1,50 @@
 {
-    "name": "webnuvola/laravel-json-ld",
-    "description": "Laravel wrapper for torann/json-ld",
-    "keywords": ["laravel", "json-ld"],
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Fabio Cagliero",
-            "email": "caglierofabio@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^7.3",
-        "illuminate/support": "5.8.*|^6.0|^7.0|^8.0",
-        "torann/json-ld": "~0.0.19"
+  "name": "webnuvola/laravel-json-ld",
+  "description": "Laravel wrapper for torann/json-ld",
+  "keywords": ["laravel", "json-ld"],
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabio Cagliero",
+      "email": "caglierofabio@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4|^8.0",
+    "illuminate/support": "^8.0",
+    "torann/json-ld": "~0.0.19"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.16",
+    "phpunit/phpunit": "^9.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Webnuvola\\Laravel\\JsonLd\\": "src/"
     },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "phpunit/phpunit": "^9.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Webnuvola\\Laravel\\JsonLd\\": "src/"
-        },
-        "files": ["src/helpers.php"]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Webnuvola\\Laravel\\JsonLd\\Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Webnuvola\\Laravel\\JsonLd\\JsonLdServiceProvider"
-            ]
-        }
-    },
-    "scripts": {
-        "test": "phpunit --testdox"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "files": ["src/helpers.php"]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Webnuvola\\Laravel\\JsonLd\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Webnuvola\\Laravel\\JsonLd\\JsonLdServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "phpunit --testdox"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
