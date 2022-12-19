@@ -1,6 +1,5 @@
 <?php
 
-use JsonLd\Context as TorannJsonLd;
 use Webnuvola\Laravel\JsonLd\JsonLd;
 
 if (! function_exists('jsonld')) {
