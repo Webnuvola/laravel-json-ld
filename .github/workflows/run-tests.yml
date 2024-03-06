@@ -1,21 +1,36 @@
-name: Tests
+name: Run Tests
 
 on: [push, pull_request]
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: true
       matrix:
-        php: ['8.0', 8.1, 8.2]
+        os: [ubuntu-latest]
+        php: [8.1, 8.2, 8.3]
+        laravel: [9.*, 10.*, 11.*]
         stability: [prefer-lowest, prefer-stable]
+        include:
+          - laravel: 9.*
+            testbench: ^7.40
+            pest: ^1.0
+          - laravel: 10.*
+            testbench: ^8.21
+            pest: ^2.0
+          - laravel: 11.*
+            testbench: ^9.0
+            pest: ^2.0
+        exclude:
+          - php: 8.1
+            laravel: 11.*
 
-    name: PHP${{ matrix.php }} - ${{ matrix.stability }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -30,7 +45,9 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
-        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+        run: |
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" "pestphp/pest:${{ matrix.pest }}" --no-interaction --no-update
+          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/pest

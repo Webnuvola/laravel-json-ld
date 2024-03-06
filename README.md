@@ -1,6 +1,6 @@
 # Laravel json-ld
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/webnuvola/laravel-json-ld.svg?style=flat-square)](https://packagist.org/packages/webnuvola/laravel-json-ld)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/webnuvola/laravel-json-ld/Tests?label=tests)](https://github.com/webnuvola/laravel-json-ld/actions?query=workflow%3ATests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/webnuvola/laravel-json-ld/run-tests.yml?branch=main)](https://github.com/webnuvola/laravel-json-ld/actions/workflows/run-tests.yml?query=branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/webnuvola/laravel-json-ld.svg?style=flat-square)](https://packagist.org/packages/webnuvola/laravel-json-ld)
 
 This package allows you to use the `torann/json-ld` package with Laravel.
