@@ -2,22 +2,21 @@
 
 namespace Webnuvola\Laravel\JsonLd;
 
-use JsonLd\Context as TorannJsonLd;
 use Illuminate\Contracts\Support\Htmlable;
+use JsonLd\Context;
+use JsonLd\Context as TorannJsonLd;
 
 class JsonLd implements Htmlable
 {
     /**
      * Contains all TorannJsonLd instances.
      *
-     * @var \JsonLd\Context[]
+     * @var Context[]
      */
     protected $jsonLd = [];
 
     /**
      * Add a new TorannJsonLd instance.
-     *
-     * @param \JsonLd\Context $jsonLd
      */
     public function add(TorannJsonLd $jsonLd): void
     {
@@ -26,22 +25,17 @@ class JsonLd implements Htmlable
 
     /**
      * Create a new TorannJsonLd instance and add it to array.
-     *
-     * @param string $context
-     * @param array $data
-     * @return \JsonLd\Context
      */
     public function create(string $context, array $data = []): TorannJsonLd
     {
         $jsonldContext = new TorannJsonLd($context, $data);
         $this->add($jsonldContext);
+
         return $jsonldContext;
     }
 
     /**
      * Count the TorannJsonLd instances.
-     *
-     * @return int
      */
     public function count(): int
     {
@@ -50,8 +44,6 @@ class JsonLd implements Htmlable
 
     /**
      * Generate html output.
-     *
-     * @return string
      */
     public function generate(): string
     {
@@ -66,8 +58,6 @@ class JsonLd implements Htmlable
 
     /**
      * Get content as a string of HTML.
-     *
-     * @return string
      */
     public function toHtml(): string
     {
@@ -76,8 +66,6 @@ class JsonLd implements Htmlable
 
     /**
      * Get the HTML string.
-     *
-     * @return string
      */
     public function __toString(): string
     {

@@ -2,15 +2,13 @@
 
 namespace Webnuvola\Laravel\JsonLd;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Support\DeferrableProvider;
+use Illuminate\Support\ServiceProvider;
 
 class JsonLdServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register json-ld service.
-     *
-     * @return void
      */
     public function register(): void
     {
@@ -21,8 +19,6 @@ class JsonLdServiceProvider extends ServiceProvider implements DeferrableProvide
 
     /**
      * Get the services provided by the provider.
-     *
-     * @return array
      */
     public function provides(): array
     {

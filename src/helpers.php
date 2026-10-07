@@ -1,16 +1,13 @@
 <?php
 
+use JsonLd\Context;
 use Webnuvola\Laravel\JsonLd\JsonLd;
 
 if (! function_exists('jsonld')) {
     /**
      * Return JsonLd instance.
-     *
-     * @param  string $context
-     * @param  array $data
-     * @return \JsonLd\Context|\Webnuvola\Laravel\JsonLd\JsonLd
      */
-    function jsonld(string $context = null, array $data = [])
+    function jsonld(?string $context = null, array $data = []): Context|JsonLd
     {
         if ($context) {
             return app(JsonLd::class)
